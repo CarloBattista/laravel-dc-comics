@@ -1,7 +1,7 @@
 @extends( 'layout.app' )
 
 @section('titlePage')
-    laravel-dc-comics
+    Laravel-Comics | Home
 @endsection
 
 @section( 'content' )

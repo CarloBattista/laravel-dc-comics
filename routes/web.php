@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ComicController;
+use App\Http\Controllers\ComicController as ComicController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -16,6 +16,8 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'getHome'])->name('home');
+Route::get('/', function () {
+    return view('pages.home' );
+})->name('home');
 
-Route::resource("/Comics", ComicController::class);
+Route::resource("/comics", ComicController::class);

@@ -1,7 +1,11 @@
-@extends('layout.app');
+@extends( 'layout.app' )
+
+@section('titlePage')
+    Laravel-Comics | Comics
+@endsection
 
 @section( 'content' )
 
-    <h1>Ciclo delle card</h1>
+    <h1>Comics</h1>
 
 @endsection

@@ -11,7 +11,7 @@
                 <a class="linkPage" href="/characters">Characters</a>
             </li>
             <li class="listItem currentPage">
-                <a class="linkPage" href="{{ route( 'Comics.index' ) }}">Comics</a>
+                <a class="linkPage" href="{{ route( 'comics.index' ) }}">Comics</a>
             </li>
             <li class="listItem">
                 <a class="linkPage" href="/movies">Movies</a>

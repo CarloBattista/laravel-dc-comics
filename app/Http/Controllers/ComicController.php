@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comic;
+
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -12,9 +13,18 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function getHome()
+    {
+        $comics = Comic::all();
+
+        return view('pages.home.index', compact('comics'));
+    }
+
     public function index()
     {
-        return view('pages.comics.index');
+        $comics = Comic::all();
+        return view('pages.comics.index', compact('comics'));
     }
 
     /**
