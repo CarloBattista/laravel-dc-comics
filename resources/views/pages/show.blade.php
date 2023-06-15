@@ -1,7 +1,7 @@
 @extends( 'layout.app' )
 
 @section('titlePage')
-    Laravel-Comics | Show
+    Laravel-Comics | {{ $comic->title }}
 @endsection
 
 @section( 'content' )
