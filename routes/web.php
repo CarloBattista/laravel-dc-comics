@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ComicController as ComicController;
+use App\Models\Comic;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -16,8 +17,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home' );
-})->name('home');
+// Route::get('/', function () {
+//     return view('pages.home' );
+// })->name('home');
 
-Route::resource("/comics", ComicController::class);
+// Route::resource("/comics", ComicController::class);
+
+Route::get('/', [ComicController::class, 'getHome']);
+
+Route::resource('/comics', ComicController::class);

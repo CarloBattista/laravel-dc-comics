@@ -18,13 +18,14 @@ class ComicController extends Controller
     {
         $comics = Comic::all();
 
-        return view('pages.home.index', compact('comics'));
+        return view('pages.home', compact('comics'));
     }
 
     public function index()
     {
         $comics = Comic::all();
-        return view('pages.comics.index', compact('comics'));
+
+        return view('pages.home', compact('comics'));
     }
 
     /**

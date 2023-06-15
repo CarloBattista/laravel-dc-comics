@@ -2,7 +2,7 @@
 <div class="header">
     <div class="inner_header">
         <!-- Logo -->
-        <a href="{{ route( 'home' ) }}" class="logoSite">
+        <a href="/" class="logoSite">
             <img class="icon_logo" src="{{ Vite::asset('resources/_imgs/dc-logo.png') }}" alt="logo dc">
         </a>
         <!-- Nav -->
@@ -11,7 +11,7 @@
                 <a class="linkPage" href="/characters">Characters</a>
             </li>
             <li class="listItem currentPage">
-                <a class="linkPage" href="{{ route( 'comics.index' ) }}">Comics</a>
+                <a class="linkPage" href="/comics">Comics</a>
             </li>
             <li class="listItem">
                 <a class="linkPage" href="/movies">Movies</a>
