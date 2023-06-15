@@ -1,0 +1,14 @@
+.container__hero {
+    width: 100%;
+    min-height: 450px;
+
+    .hero_img {
+        width: 100%;
+        min-height: 100%;
+        aspect-ratio: 16 / 4;
+
+        @media only screen and (max-width: 720px) {
+            min-height: auto;
+        }
+    }
+}
