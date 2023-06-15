@@ -9,6 +9,8 @@
 </head>
 <body>
 
+    @include( 'partials.header' )
+
     <div class="mainView">
         @yield( 'content' )
     </div>
