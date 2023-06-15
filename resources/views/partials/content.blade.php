@@ -7,9 +7,9 @@
         <div class="container_series">
             @foreach ($comics as $elem)
                 <div class="cardSeries">
-                    <a href="/">
+                    <a href="{{ route('comics.show', $elem) }}">
                         <div class="imgWrap">
-                            <img class="img_series" src="{{ $elem->thumb }}" alt="">
+                            <img class="img_series" src="{{ $elem->thumb }}" alt="{{ $elem->title }}">
                         </div>
                         <div class="infoWrap">
                             <p class="info_content title_series">{{ $elem->title }}</p>

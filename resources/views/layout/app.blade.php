@@ -13,9 +13,6 @@
 
     <div class="mainView">
         @yield( 'content' )
-
-        @include( 'partials.hero' )
-        @include( 'partials.content' )
     </div>
     
 </body>

@@ -6,4 +6,7 @@
 
 @section( 'content' )
 
+@include( 'partials.hero' )
+@include( 'partials.content' )
+
 @endsection

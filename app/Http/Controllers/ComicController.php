@@ -46,7 +46,13 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+
+        $newComic = new Comic();
+        $newComic->fill($form_data);
+        $newComic->save();
+
+        return redirect()->route('pages.home');
     }
 
     /**
@@ -55,9 +61,10 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        return view('pages.show', compact('comic'));
     }
 
     /**
