@@ -8,7 +8,7 @@
             @include('pages.comics.index')
         </div>
         <div class="container_cta">
-            <a href="comics/create" class="btn_load_more inverted_btn">Create</a>
+            <a href="comics/create" class="btn_load_more inverted_btn">Create Comic</a>
         </div>
     </div>
 </div>
