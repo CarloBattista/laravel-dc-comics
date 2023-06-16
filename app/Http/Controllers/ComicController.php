@@ -25,7 +25,7 @@ class ComicController extends Controller
     {
         $comics = Comic::all();
 
-        return view('pages.home', compact('comics'));
+        return view('pages.index', compact('comics'));
     }
 
     /**
@@ -35,7 +35,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.comics.create');
     }
 
     /**
@@ -48,11 +48,11 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
 
-        $newComic = new Comic();
-        $newComic->fill($form_data);
-        $newComic->save();
+        $new_Comic = new Comic();
+        $new_Comic->fill($form_data);
+        $new_Comic->save();
 
-        return redirect()->route('pages.home');
+        return redirect()->route('home');
     }
 
     /**
@@ -64,7 +64,7 @@ class ComicController extends Controller
     public function show($id)
     {
         $comic = Comic::findOrFail($id);
-        return view('pages.show', compact('comic'));
+        return view('pages.comics.show', compact('comic'));
     }
 
     /**
@@ -87,7 +87,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+
     }
 
     /**
@@ -98,6 +98,6 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
     }
 }

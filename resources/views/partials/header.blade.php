@@ -7,35 +7,11 @@
         </a>
         <!-- Nav -->
         <ul class="nav">
-            <li class="listItem">
-                <a class="linkPage" href="/characters">Characters</a>
-            </li>
             <li class="listItem currentPage">
-                <a class="linkPage" href="/comics">Comics</a>
+                <a class="linkPage" href="/">Home</a>
             </li>
             <li class="listItem">
-                <a class="linkPage" href="/movies">Movies</a>
-            </li>
-            <li class="listItem">
-                <a class="linkPage" href="/tv">Tv</a>
-            </li>
-            <li class="listItem">
-                <a class="linkPage" href="/games">Games</a>
-            </li>
-            <li class="listItem">
-                <a class="linkPage" href="/collectibles">Collectibles</a>
-            </li>
-            <li class="listItem">
-                <a class="linkPage" href="/videos">Videos</a>
-            </li>
-            <li class="listItem">
-                <a class="linkPage" href="/fans">Fans</a>
-            </li>
-            <li class="listItem">
-                <a class="linkPage" href="/news">News</a>
-            </li>
-            <li class="listItem">
-                <a class="linkPage" href="/shop">Shop</a>
+                <a class="linkPage" href="comics/create">Create Comics</a>
             </li>
         </ul>
     </div>

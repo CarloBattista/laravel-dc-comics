@@ -17,14 +17,15 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages.home' );
-// })->name('home');
-
 // Route::resource("/comics", ComicController::class);
 
-Route::get('/', [ComicController::class, 'getHome']);
+Route::get('/', function () {
+    return view('pages.home' );
+})->name('home');
 
-Route::get('/{comics}', [ComicController::class, 'show']);
+Route::get('/', [ComicController::class, 'getHome'])->name('home');
+
+Route::get('/{comics}', [ComicController::class, 'show'])->name('show');
+
 
 Route::resource('/comics', ComicController::class);

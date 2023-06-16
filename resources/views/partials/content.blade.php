@@ -5,23 +5,10 @@
             <h2 class="heading_content">Current Series</h2>
         </div>
         <div class="container_series">
-            @foreach ($comics as $elem)
-                <div class="cardSeries">
-                    <a href="{{ route('comics.show', $elem) }}">
-                        <div class="imgWrap">
-                            <img class="img_series" src="{{ $elem->thumb }}" alt="{{ $elem->title }}">
-                        </div>
-                        <div class="infoWrap">
-                            <p class="info_content title_series">{{ $elem->title }}</p>
-                            <p class="info_content price_series">{{ $elem->price }}</p>
-                            <p class="info_content sale_series">{{ $elem->sale_date }}</p>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
+            @include('pages.comics.index')
         </div>
         <div class="container_cta">
-            <button type="button" class="btn_load_more inverted_btn">Load More</button>
+            <a href="comics/create" class="btn_load_more inverted_btn">Create</a>
         </div>
     </div>
 </div>
