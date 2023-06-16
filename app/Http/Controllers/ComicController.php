@@ -46,25 +46,24 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate(
-        //     [
-        //         'title' => 'required|unique:comics',
-        //         'description' => 'unique:comics',
-        //         'thumb' => 'unique:comics',
-        //         'price' => 'required',
-        //         'series' => 'required',
-        //         'sale_date' => 'required',
-        //         'type' => 'required',
-        //     ],
-        //     [
-        //         'title.required' => 'Devi inserire il titolo del comic',
-        //         'title.unique' => 'Esiste già presente un comic con il nome :input',
-        //         'price.required' => 'Devi inserire il prezzo del comic',
-        //         'series.required' => 'Devi inserire il series del comic',
-        //         'sale_date.required' => 'Devi inserire la data del comic',
-        //         'type.required' => 'Devi inserire il tipo di comic',
-        //     ]
-        // );
+        $request->validate(
+            [
+                'title'=> ['required', 'max:100'],
+                'description'=> ['required'],
+                'price'=> ['required'],
+                'series'=> ['required', 'max:30'],
+                'sale_date'=> ['required','date'],
+                'type'=> ['required', 'max:30'],
+            ],
+            [
+                'title.required'=>'Il campo è obbligatorio',
+                'title.max'=>'Il titolo deve essere sotto i 100 caratteri',
+                'price.required'=>'Il campo è obbligatorio',
+                'series.required'=>'Il campo è obbligatorio',
+                'sale_date.required'=>'Il campo è obbligatorio',
+                'type.required'=>'Il campo è obbligatorio'
+            ]
+        );
 
         $form_data = $request->all();
 
@@ -72,7 +71,7 @@ class ComicController extends Controller
         $new_Comic->fill($form_data);
         $new_Comic->save();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Aggiunto con successo!!');
     }
 
     /**

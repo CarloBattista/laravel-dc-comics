@@ -13,7 +13,10 @@
 
         <div class="mb-3">
             <label for="field_text" class="form-label">Title</label>
-            <input type="text" class="form-control" id="field_text" name="title" max="100" required value="{{$comic->title}}">
+            <input type="text" class="form-control @error('title') is-invalid @enderror" id="field_text" name="title" max="100" required value="{{$comic->title}}">
+            @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="floatingTextarea2" class="form-label">Descrizione</label>

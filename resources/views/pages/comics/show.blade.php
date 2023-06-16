@@ -17,11 +17,6 @@
     </div>
     <div class="extra_function mt-3 d-flex">
         <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary">Modifica</a>
-        {{-- <form action="{{ route('comics.destroy',$comic->id) }}" class="ms-3" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Delete</button>
-        </form> --}}
         <button type="button" class="btn btn-danger ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
