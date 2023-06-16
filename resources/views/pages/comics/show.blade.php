@@ -16,12 +16,31 @@
         <p class="info_content sale_series">{{ $comic->sale_date }}</p>
     </div>
     <div class="extra_function mt-3 d-flex">
-        <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning">Edit</a>
-        <form action="{{ route('comics.destroy',$comic->id) }}" class="ms-3" method="POST">
+        <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary">Modifica</a>
+        {{-- <form action="{{ route('comics.destroy',$comic->id) }}" class="ms-3" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+        </form> --}}
+        <button type="button" class="btn btn-danger ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Elimina</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Vuoi davvero eliminare il Comic?</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <form action="{{ route('comics.destroy',$comic->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Elimina</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary ms-3" data-bs-dismiss="modal">Annulla</button>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -46,6 +46,26 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->validate(
+        //     [
+        //         'title' => 'required|unique:comics',
+        //         'description' => 'unique:comics',
+        //         'thumb' => 'unique:comics',
+        //         'price' => 'required',
+        //         'series' => 'required',
+        //         'sale_date' => 'required',
+        //         'type' => 'required',
+        //     ],
+        //     [
+        //         'title.required' => 'Devi inserire il titolo del comic',
+        //         'title.unique' => 'Esiste già presente un comic con il nome :input',
+        //         'price.required' => 'Devi inserire il prezzo del comic',
+        //         'series.required' => 'Devi inserire il series del comic',
+        //         'sale_date.required' => 'Devi inserire la data del comic',
+        //         'type.required' => 'Devi inserire il tipo di comic',
+        //     ]
+        // );
+
         $form_data = $request->all();
 
         $new_Comic = new Comic();
@@ -88,6 +108,26 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        // $request->validate(
+        //     [
+        //         'title' => 'required|unique:comics',
+        //         'description' => 'unique:comics',
+        //         'thumb' => 'unique:comics',
+        //         'price' => 'required',
+        //         'series' => 'required',
+        //         'sale_date' => 'required',
+        //         'type' => 'required',
+        //     ],
+        //     [
+        //         'title.required' => 'Devi inserire il titolo del comic',
+        //         'title.unique' => 'Esiste già presente un comic con il nome :input',
+        //         'price.required' => 'Devi inserire il prezzo del comic',
+        //         'series.required' => 'Devi inserire il series del comic',
+        //         'sale_date.required' => 'Devi inserire la data del comic',
+        //         'type.required' => 'Devi inserire il tipo di comic',
+        //     ]
+        // );
+
         $form_data = $request->all();
         $comic->update($form_data);
 
